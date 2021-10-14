@@ -3,9 +3,9 @@ package com.poscom.bootstrap;
 import com.poscom.model.Comment;
 import com.poscom.model.Post;
 import com.poscom.model.User;
-import com.poscom.repositories.CommentRepository;
-import com.poscom.repositories.PostRepository;
-import com.poscom.repositories.UserRepository;
+import com.poscom.repository.CommentRepository;
+import com.poscom.repository.PostRepository;
+import com.poscom.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.poscom.repositories;
+package com.poscom.repository;
 
 import com.poscom.model.Comment;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -13,4 +13,6 @@ import java.util.Set;
 public interface PostRepository extends JpaRepository<Post, Long> {
 
     Set<Comment> findCommentsById(Long id);
+
+    Post findPostById(Long postId);
 }

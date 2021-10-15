@@ -26,6 +26,8 @@ public class Comment implements Serializable {
 
     private String comment;
 
+    private Integer points;
+
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private User user;
 

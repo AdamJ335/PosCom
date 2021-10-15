@@ -1,13 +1,15 @@
 package com.poscom.controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Controller;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Adam Jennings
  * @since 14/10/2021
  */
-@Controller
+@Slf4j
+@RestController
 @AllArgsConstructor
 public class CommentController {
 }

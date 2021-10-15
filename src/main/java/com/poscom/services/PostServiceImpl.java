@@ -10,12 +10,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Adam Jennings
+ * @since 15/10/2021
+ */
 @Slf4j
 @Service
 @AllArgsConstructor
 public class PostServiceImpl implements PostService{
 
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
 
 
     @Override
@@ -27,6 +31,12 @@ public class PostServiceImpl implements PostService{
     @Override
     public Set<Comment> getComments(Long postId) {
         return postRepository.findCommentsById(postId);
+    }
+
+    @Override
+    public Post getPost(Long postId) {
+        log.debug("[getPost] Returning Post by ID [{}]", postId);
+        return postRepository.findPostById(postId);
     }
 
 }

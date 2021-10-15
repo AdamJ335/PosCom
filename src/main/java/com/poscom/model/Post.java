@@ -30,6 +30,8 @@ public class Post implements Serializable {
 
     private String description;
 
+    private Integer points;
+
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private User user;
 

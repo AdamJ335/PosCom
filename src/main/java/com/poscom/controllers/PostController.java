@@ -24,15 +24,23 @@ public class PostController {
     private final PostService postService;
 
     @RequestMapping("/posts")
-    public List<Post> getPosts(){
+    public List<Post> getPosts() {
         log.debug("[getPosts] Getting a list of all Posts...");
         List<Post> posts = postService.getPosts();
         log.debug("[getPosts] Retrieved {} posts", posts.size());
         return posts;
     }
 
+    @RequestMapping("/post/{postId}")
+    public Post getPost(@PathVariable Long postId) {
+        log.debug("[getPost] Getting Post with ID: [{}]", postId);
+        Post post = postService.getPost(postId);
+        log.debug("[getPost] Retrieved Post [{}]", post);
+        return post;
+    }
+
     @RequestMapping("/posts/{postId}/comments")
-    public Set<Comment> getComments(@PathVariable Long postId){
+    public Set<Comment> getComments(@PathVariable Long postId) {
         log.debug("[getComments] Getting a list of all Comments from Post [{}]...", postId);
         Set<Comment> comments = postService.getComments(postId);
         log.debug("[getComments] Retrieved [{}] comments", comments.size());

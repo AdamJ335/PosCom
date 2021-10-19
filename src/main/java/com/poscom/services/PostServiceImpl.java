@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Set;
 
+import static java.lang.String.format;
+
 /**
  * @author Adam Jennings
  * @since 15/10/2021
@@ -36,7 +38,10 @@ public class PostServiceImpl implements PostService{
     @Override
     public Post getPost(Long postId) {
         log.debug("[getPost] Returning Post by ID [{}]", postId);
-        return postRepository.findPostById(postId);
+        Post post = postRepository.findById(postId).orElseThrow(() -> {
+            throw new IllegalStateException(format("No post found for ID: %s!", postId));
+        });
+        return post;
     }
 
 }

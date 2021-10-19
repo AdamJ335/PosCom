@@ -1,5 +1,7 @@
 package com.poscom.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,9 +35,11 @@ public class Post implements Serializable {
     private Integer points;
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
+    @JsonBackReference(value="post-user")
     private User user;
 
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER)
+    @JsonBackReference(value="post-comments")
     private Set<Comment> comments = new HashSet<>();
 
     public Post(String title, String description) {

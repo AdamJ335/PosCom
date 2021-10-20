@@ -1,6 +1,7 @@
 package com.poscom.controllers;
 
 import com.poscom.model.User;
+import com.poscom.rest.RestResponse;
 import com.poscom.services.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,10 +21,10 @@ public class UserController {
     private final UserService userService;
 
     @RequestMapping("/users/{userId}")
-    public User getUser(@PathVariable Long userId) {
+    public RestResponse<User> getUser(@PathVariable Long userId) {
         log.debug("[getUser] Getting User with ID: [{}]", userId);
         User user = userService.getUser(userId);
         log.debug("[getUser] Retrieved User [{}]", user);
-        return user;
+        return RestResponse.successful(user);
     }
 }

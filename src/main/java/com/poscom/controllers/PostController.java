@@ -32,7 +32,7 @@ public class PostController {
         return RestResponse.successful(posts);
     }
 
-    @RequestMapping("/post/{postId}")
+    @RequestMapping("/posts/{postId}")
     public RestResponse<Post> getPost(@PathVariable Long postId) {
         log.debug("[getPost] Getting Post with ID: [{}]", postId);
         Post post = postService.getPost(postId);
@@ -40,11 +40,4 @@ public class PostController {
         return RestResponse.successful(post);
     }
 
-    @RequestMapping("/posts/{postId}/comments")
-    public RestResponse<Set<Comment>> getComments(@PathVariable Long postId) {
-        log.debug("[getComments] Getting a list of all Comments from Post [{}]...", postId);
-        Set<Comment> comments = postService.getComments(postId);
-        log.debug("[getComments] Retrieved [{}] comments", comments.size());
-        return RestResponse.successful(comments);
-    }
 }

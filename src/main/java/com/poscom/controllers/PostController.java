@@ -1,6 +1,5 @@
 package com.poscom.controllers;
 
-import com.poscom.model.Comment;
 import com.poscom.model.Post;
 import com.poscom.rest.RestResponse;
 import com.poscom.services.PostService;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Adam Jennings

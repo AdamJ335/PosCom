@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * Standard response class to be used when interacting via REST / AJAX.
  *
- * @author Dan Bennett (dbennett)
+ * @author Dan Bennett (dbennett) / Tier2 Consulting
  * @since 23/12/2016
  */
 public class RestResponse<T> {

@@ -22,6 +22,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "tbl_users")
 public class User implements Serializable {
 
     @Id

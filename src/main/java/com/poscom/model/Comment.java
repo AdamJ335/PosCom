@@ -19,6 +19,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "tbl_comments")
 public class Comment implements Serializable {
 
     @Id
